@@ -3,6 +3,9 @@ import App from './App.vue'
 
 Vue.config.productionTip = false
 
+import _ from 'lodash';
+Object.defineProperty(Vue.prototype, '$_', { value: _ });
+
 new Vue({
   render: h => h(App),
 }).$mount('#app')
