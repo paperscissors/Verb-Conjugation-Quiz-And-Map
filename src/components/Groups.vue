@@ -4,7 +4,7 @@
 
   <div class="groups">
     <template v-for="(group, key) in groups" >
-      <div class="group-container"  :class="{ active: active == key+1 }" v-show="active == false || active == key+1">
+      <div class="group-container"  :class="{ active: active == key+1 }" v-show="active == false || active == key+1" :key="key+1">
 
           <div :key="key+1" class="group" >
             <h2>{{ group.name }}</h2>
@@ -15,9 +15,9 @@
             </template>
             </p>
             <div class="nav no-float" v-if="verb == false && active">
-              <button class="control" v-if="active !== false" @click="active = false; verb = false">Back to main</button>
+              <button class="control" v-if="active !== false" @click="active = false; verb = false; quiz = false">Back to main</button>
             </div>
-            <button v-if="!active" @click="activateGroup(key+1)">View verbs</button> <button class="quiz-me" @click="quizMe(key+1)">Quiz me</button>
+            <button v-if="!active" @click="activateGroup(key+1)">View verbs</button> <button v-if="!quiz" class="quiz-me" @click="quizMe(key+1)">Quiz me</button>
           </div>
 
         <div class="verb-list" v-show="active == key+1">
@@ -35,37 +35,17 @@
           </div>
 
           <div v-if="quiz">
-            <h2>Conjugation Quiz <span style="margin-left:15px; font-weight: 400">{{ quiz_step}}/10</span></h2>
-            <h3>a {{ active_quiz.name }}</h3>
+            <h3 class="quiz-header" style="margin-top: 0px; margin-bottom: 23px;">Conjugation Quiz <span style="font-size: 28px; margin-top: -7px;">a {{ active_quiz.name }}</span> <span style="margin-left:15px; font-weight: 400; text-align: right;">{{ quiz_step}}/10</span></h3>
+
 
             <div class="quiz-items">
-              <div class="quiz-item">
-                <label>eu </label> <input type="text" class="quiz-text" />
-              </div>
-
-              <div class="quiz-item">
-                <label>tu </label> <input type="text" class="quiz-text" />
-              </div>
-
-              <div class="quiz-item">
-                <label>el/ea </label> <input type="text" class="quiz-text" />
-              </div>
-
-              <div class="quiz-item">
-                <label>noi </label> <input type="text" class="quiz-text" />
-              </div>
-
-              <div class="quiz-item">
-                <label>voi </label> <input type="text" class="quiz-text" />
-              </div>
-
-              <div class="quiz-item">
-                <label>ei/ele </label> <input type="text" class="quiz-text" />
-              </div>
+              <template v-for="(tense, tense_key) in active_quiz.conjugations">
+                <Answer :pronoun="pronouns[tense_key]" :conjugation="tense" v-bind:key="'answer_'+tense_key" />
+              </template>
             </div>
 
             <button @click="goToNext" v-if="quiz_step < 10">Next</button>
-            <button @click="goToNext" v-if="quiz_step == 10">Check answers!</button>
+            <button @click="finishQuiz" v-if="quiz_step == 10">Check answers!</button>
           </div>
         </div>
       </div>
@@ -75,6 +55,7 @@
 </template>
 
 <script>
+import Answer from './Answer.vue'
 
 function randomNoRepeats(array) {
   var copy = array.slice(0);
@@ -89,6 +70,9 @@ function randomNoRepeats(array) {
 
 export default {
   name: 'Groups',
+  components: {
+    Answer
+  },
   props: ['groups'],
   data: function () {
     return {
@@ -98,6 +82,9 @@ export default {
       quizzed_verbs: null,
       verb: false,
       active_quiz: null,
+      active_quiz_answers: [
+        '', '', '', '', '', ''
+      ],
       pronouns: [
         'eu', 'tu', 'el/ea', 'noi', 'voi', 'ei/ele'
       ]
@@ -107,7 +94,7 @@ export default {
    activateGroup: function(key) {
       this.active = key
     },
-    showConjugations: function(verb, key) {
+    showConjugations: function(verb) {
       this.verb = verb
     },
     groupVerbs: function(verbs) {
@@ -124,25 +111,27 @@ export default {
     },
     goToNext: function() {
       this.quiz_step++
-
-      var active_group = this.groups[this.active-1];
-      var verbs = active_group.verbs;
+      // var active_group = this.groups[this.active-1];
+      // var verbs = active_group.verbs;
       // var selected = Math.floor(Math.random()*verbs.length);
 
       this.active_quiz = this.quizzed_verb();
-    }
+    },
+    finishQuiz: function() {}
   },
   computed: {
-    quizVerb: function() {
 
-    }
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-
+.quiz-header {
+  display: grid;
+  grid-template-columns: 1.2fr 4fr 1fr;
+  align-items: top;
+}
 .nav {
   float: right;
 }
@@ -151,22 +140,7 @@ export default {
   width: 50%;
   margin-bottom: 18px;
 }
-.quiz-item {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  display: grid;
-  grid-template-columns: 1fr 4fr;
-  align-items: center;
-  margin-bottom: 5px;
-}
 
-.quiz-item input {
-  font-size: 16px;
-}
-
-.quiz-text {
-  padding: 10px;
-
-}
 
 .nav.no-float {
   float: none;
