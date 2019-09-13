@@ -17,7 +17,7 @@
             <div class="nav no-float" v-if="verb == false && active">
               <button class="control" v-if="active !== false" @click="active = false; verb = false; quiz = false">Back to main</button>
             </div>
-            <button v-if="!active" @click="activateGroup(key+1)">View verbs</button> <button v-if="!quiz" class="quiz-me" @click="quizMe(key+1)">Quiz me</button>
+            <button v-if="!active" @click="activateGroup(key+1)">View verbs</button> <button v-if="!quiz" class="quiz-me" @click="quizMe(key+1)">Practice!</button>
           </div>
 
         <div class="verb-list" v-show="active == key+1">
@@ -35,7 +35,7 @@
           </div>
 
           <div v-if="quiz">
-            <h3 class="quiz-header" style="margin-top: 0px; margin-bottom: 23px;">Conjugation Quiz <span style="font-size: 28px; margin-top: -7px;">a {{ active_quiz.name }}</span> <span style="margin-left:15px; font-weight: 400; text-align: right;">{{ quiz_step}}/10</span></h3>
+            <h3 class="quiz-header" style="margin-top: 0px; margin-bottom: 23px;">Conjugation Practice <span style="font-size: 28px; margin-top: -7px;">a {{ active_quiz.name }}</span> <span style="margin-left:15px; font-weight: 400; text-align: right;">{{ quiz_step}}/10</span></h3>
 
 
             <div class="quiz-items">
@@ -45,7 +45,9 @@
             </div>
 
             <button @click="goToNext" v-if="quiz_step < 10">Next</button>
-            <button @click="finishQuiz" v-if="quiz_step == 10">Check answers!</button>
+            <button v-if="quiz_step == 10" @click="verb = false; quiz = false; active_quiz = null; quiz_step = 1">Back to {{ group.name }}</button>
+            <button @click="finishQuiz" v-if="quiz_step == 10">Practice again!</button>
+
           </div>
         </div>
       </div>
