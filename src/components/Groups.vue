@@ -17,7 +17,8 @@
             <div class="nav no-float" v-if="verb == false && active">
               <button class="control" v-if="active !== false" @click="active = false; verb = false; quiz = false">Back to main</button>
             </div>
-            <button v-if="!active" @click="activateGroup(key+1)">View verbs</button> <button v-if="!quiz" class="quiz-me" @click="quizMe(key+1)">Practice!</button>
+            <button v-if="!active " @click="activateGroup(key+1)">Verbs</button>
+            <button v-if="!quiz && verb === false" class="quiz-me" @click="quizMe(key+1)">Practice!</button>
           </div>
 
         <div class="verb-list" v-show="active == key+1">
@@ -39,14 +40,16 @@
 
 
             <div class="quiz-items">
-              <template v-for="(tense, tense_key) in active_quiz.conjugations">
-                <Answer :pronoun="pronouns[tense_key]" :conjugation="tense" v-bind:key="'answer_'+tense_key" />
-              </template>
+                <Answer v-for="(tense, tense_key) in active_quiz.conjugations"
+                :pronoun="pronouns[tense_key]"
+                :conjugation="tense"
+                :key="'answer_'+tense_key+'_'+key"
+                :tense_key="tense_key"
+                :ref="'answer_'+tense_key+'_'+key"></Answer>
             </div>
-
-            <button @click="goToNext" v-if="quiz_step < 10">Next</button>
-            <button v-if="quiz_step == 10" @click="verb = false; quiz = false; active_quiz = null; quiz_step = 1">Back to {{ group.name }}</button>
-            <button @click="finishQuiz" v-if="quiz_step == 10">Practice again!</button>
+            <button @click="goToNext" v-if="isVerbComplete">Next</button>
+            <button v-if="quiz_step == 10 && store_state.correct_answers.length == 6" @click="resetQuiz">Back to {{ group.name }}</button>
+            <button v-if="quiz_step == 10 && store_state.correct_answers.length == 6" @click="finishQuiz">Practice again!</button>
 
           </div>
         </div>
@@ -58,6 +61,8 @@
 
 <script>
 import Answer from './Answer.vue'
+import { store } from "../store.js";
+import axios from 'axios';
 
 function randomNoRepeats(array) {
   var copy = array.slice(0);
@@ -66,8 +71,29 @@ function randomNoRepeats(array) {
     var index = Math.floor(Math.random() * copy.length);
     var item = copy[index];
     copy.splice(index, 1);
+
     return item;
   };
+}
+
+function getAPIConjugations(verb) {
+
+        return axios.get("http://localhost:5000/api/conjugate/"+verb)
+            .then(response => {
+              let conjugations = response.data.Prezent;
+
+              return [
+                conjugations['1s'],
+                conjugations['2s'],
+                conjugations['3s'],
+                conjugations['1p'],
+                conjugations['2p'],
+                conjugations['3p']
+              ];
+            })
+            .catch(error => {
+              return error;
+          });
 }
 
 export default {
@@ -78,15 +104,15 @@ export default {
   props: ['groups'],
   data: function () {
     return {
+      store_state: store.state,
       active: false,
       quiz: false,
       quiz_step: 1,
       quizzed_verbs: null,
       verb: false,
       active_quiz: null,
-      active_quiz_answers: [
-        '', '', '', '', '', ''
-      ],
+      all_correct: false,
+      active_quiz_answers: [],
       pronouns: [
         'eu', 'tu', 'el/ea', 'noi', 'voi', 'ei/ele'
       ]
@@ -98,9 +124,16 @@ export default {
     },
     showConjugations: function(verb) {
       this.verb = verb
+
+      getAPIConjugations(verb.name).then(data => {
+        this.$set(this.verb, 'conjugations', data);
+      })
+
     },
     groupVerbs: function(verbs) {
-      return this.$_.orderBy(verbs, 'name');
+      let ordered = this.$_.orderBy(verbs, 'name');
+      // return ordered.uniqBy(verbs, 'name');
+      return ordered;
     },
     quizMe: function(group) {
       this.active = group;
@@ -110,19 +143,39 @@ export default {
       this.quizzed_verb = randomNoRepeats(active_group.verbs);
 
       this.active_quiz = this.quizzed_verb();
+      getAPIConjugations(this.active_quiz.name).then(data => {
+        this.$set(this.active_quiz, 'conjugations', data);
+      })
     },
     goToNext: function() {
       this.quiz_step++
+      store.resetCorrect();
+
       // var active_group = this.groups[this.active-1];
       // var verbs = active_group.verbs;
       // var selected = Math.floor(Math.random()*verbs.length);
 
       this.active_quiz = this.quizzed_verb();
+      getAPIConjugations(this.active_quiz.name).then(data => {
+        this.$set(this.active_quiz, 'conjugations', data);
+      })
     },
-    finishQuiz: function() {}
+    resetQuiz: function() {
+      this.finishQuiz();
+      this.verb = false;
+
+    },
+    finishQuiz: function() {
+      this.quiz = false;
+      this.active_quiz = null;
+      this.quiz_step = 1
+
+    }
   },
   computed: {
-
+    isVerbComplete: function() {
+      return this.quiz_step < 10 && this.store_state.correct_answers.length == 6;
+    }
   }
 }
 </script>
@@ -171,7 +224,7 @@ h1, h2 {
   div.groups {
     display: grid;
     grid-column-gap: 15px;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     height: 85vh;
   }
 

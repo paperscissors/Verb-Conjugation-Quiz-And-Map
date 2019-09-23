@@ -26,470 +26,122 @@ var all_groups = [
         ],
       verbs:[
         {
-          name: 'învăţa',
-          conjugations: [
-          'învaț',
-          'înveți',
-          'învață',
-          'învațăm',
-          'învațați',
-          'îvață'
-        ]},
+          name: 'învăţa'},
         {
-          name: 'cânta',
-          conjugations: [
-          'cânt',
-          'cânți',
-          'cântă',
-          'cântăm',
-          'cântaţi',
-          'cântă'
-        ]},
+          name: 'cânta'},
         {
-          name: 'asculta',
-          conjugations: [
-          'ascult',
-          'asculți',
-          'ascultă',
-          'ascultăm',
-          'ascultați',
-          'ascultă'
-        ]},
+          name: 'asculta'},
         {
-          name: 'câștiga',
-          conjugations: [
-          'câștig',
-          'căștigi',
-          'câștigă',
-          'câștigăm',
-          'câștigați',
-          'câștigă'
-        ]},
+          name: 'câștiga'},
         {
-          name: 'încerca',
-          conjugations: [
-          'încerc',
-          'încerci',
-          'încercă',
-          'încercăm',
-          'încercăți',
-          'încercă'
-        ]},
+          name: 'încerca'},
         {
-          name: 'schimba',
-          conjugations: [
-          'schimb',
-          'schimbi',
-          'schimbă',
-          'schimbăm',
-          'schimbăți',
-          'schimbă'
-        ]},
+          name: 'schimba'},
         {
-          name: 'suna',
-          conjugations: [
-          'sun',
-          'suni',
-          'sună',
-          'sunăm',
-          'sunați',
-          'sună'
-        ]},
+          name: 'suna'},
         {
-          name: 'prefera',
-          conjugations: [
-          'prefer',
-          'preferi',
-          'preferă',
-          'preferăm',
-          'preferați',
-          'preferă'
-        ]},
+          name: 'prefera'},
         {
-          name: 'pleca',
-          conjugations: [
-          'plec',
-          'pleci',
-          'pleacă*',
-          'plecăm',
-          'plecați',
-          'pleacă*'
-        ]},
+          name: 'pleca'},
         {
-          name: 'merita',
-          conjugations: [
-          'merit',
-          'meriți',
-          'merită',
-          'merităm',
-          'meritați',
-          'merită'
-        ]},
+          name: 'merita'},
         {
-          name: 'repara',
-          conjugations: [
-          'repar',
-          'repari',
-          'repară',
-          'reparăm',
-          'reparați',
-          'repară'
-        ]},
+          name: 'repara'},
         {
-          name: 'striga',
-          conjugations: [
-          'strig',
-          'strigi',
-          'strigă',
-          'strigăm',
-          'strigați',
-          'strigă'
-        ]},
+          name: 'striga'},
         {
-        "name": "alerga",
-        "conjugations": [
-            "alerg",
-            "alergi",
-            "aleargă",
-            "alergăm",
-            "alergaţi",
-            "aleargă"
-        ]
+        "name": "alerga"
     },
     {
-        "name": "mânca",
-        "conjugations": [
-            "mănânc",
-            "mănânci",
-            "mănâncă",
-            "mâncăm",
-            "mâncaţi",
-            "mănâncă"
-        ]
+        "name": "mânca"
     },
     {
-        "name": "recomanda",
-        "conjugations": [
-            "recomand",
-            "recomanzi",
-            "recomandă",
-            "recomandăm",
-            "recomandaţi",
-            "recomandă"
-        ]
+        "name": "recomanda"
     },
     {
-        "name": "anunţa",
-        "conjugations": [
-            "anunţ",
-            "anunţi",
-            "anunţă",
-            "anunţăm",
-            "anunţaţi",
-            "anunţă"
-        ]
+        "name": "anunţa"
     },
     {
-        "name": "compara",
-        "conjugations": [
-            "compar",
-            "compari",
-            "compară",
-            "comparăm",
-            "comparaţi",
-            "compară"
-        ]
+        "name": "compara"
     },
     {
-        "name": "cumpăra",
-        "conjugations": [
-            "cumpăr",
-            "cumperi",
-            "cumpără",
-            "cumpărăm",
-            "cumpăraţi",
-            "cumpără"
-        ]
+        "name": "cumpăra"
     },
     {
-        "name": "dezbrăca",
-        "conjugations": [
-            "dezbrac",
-            "dezbraci",
-            "dezbracă",
-            "dezbrăcăm",
-            "dezbrăcaţi",
-            "dezbracă"
-        ]
+        "name": "dezbrăca"
     },
     {
-        "name": "adăuga",
-        "conjugations": [
-            "adaug",
-            "adaugi",
-            "adaugă",
-            "adăugăm",
-            "adăugaţi",
-            "adaugă"
-        ]
+        "name": "adăuga"
     },
     {
-        "name": "ajuta",
-        "conjugations": [
-            "ajut",
-            "ajuţi",
-            "ajută",
-            "ajutăm",
-            "ajutaţi",
-            "ajută"
-        ]
+        "name": "ajuta"
+
     },
     {
-        "name": "alerga",
-        "conjugations": [
-            "alerg",
-            "alergi",
-            "aleargă",
-            "alergăm",
-            "alergaţi",
-            "aleargă"
-        ]
+        "name": "alerga"
+    },
+
+    {
+        "name": "căuta"
     },
     {
-        "name": "asculta",
-        "conjugations": [
-            "ascult",
-            "asculţi",
-            "ascultă",
-            "ascultăm",
-            "ascultaţi",
-            "ascultă"
-        ]
+        "name": "chema"
     },
     {
-        "name": "aştepta",
-        "conjugations": [
-            "aştept",
-            "aştepţi",
-            "aşteaptă",
-            "aşteptăm",
-            "aşteptaţi",
-            "aşteaptă"
-        ]
+        "name": "clarifica"
     },
     {
-        "name": "căuta",
-        "conjugations": [
-            "caut",
-            "cauţi",
-            "caută",
-            "căutăm",
-            "căutaţi",
-            "caută"
-        ]
+        "name": "combina"
     },
     {
-        "name": "chema",
-        "conjugations": [
-            "chem",
-            "chemi",
-            "cheamă",
-            "chemăm",
-            "chemaţi",
-            "cheamă"
-        ]
+        "name": "continua"
     },
     {
-        "name": "clarifica",
-        "conjugations": [
-            "clarific",
-            "clarifici",
-            "clarifică",
-            "clarificăm",
-            "clarificaţi",
-            "clarifică"
-        ]
+        "name": "dărâma"
     },
     {
-        "name": "combina",
-        "conjugations": [
-            "combin",
-            "combini",
-            "combină",
-            "combinăm",
-            "combinaţi",
-            "combină"
-        ]
+        "name": "discuta"
     },
     {
-        "name": "continua",
-        "conjugations": [
-            "continuu",
-            "continui",
-            "continuă",
-            "continuăm",
-            "continuaţi",
-            "continuă"
-        ]
+        "name": "exista"
     },
     {
-        "name": "dărâma",
-        "conjugations": [
-            "dărâm",
-            "dărâmi",
-            "dărâmă",
-            "dărâmăm",
-            "dărâmaţi",
-            "dărâmă"
-        ]
+        "name": "explica"
     },
     {
-        "name": "discuta",
-        "conjugations": [
-            "discut",
-            "discuţi",
-            "discută",
-            "discutăm",
-            "discutaţi",
-            "discută"
-        ]
+        "name": "flutura"
     },
     {
-        "name": "exista",
-        "conjugations": [
-            "exist",
-            "exişti",
-            "există",
-            "existăm",
-            "existaţi",
-            "există"
-        ]
+        "name": "ierta"
     },
     {
-        "name": "explica",
-        "conjugations": [
-            "explic",
-            "explici",
-            "explică",
-            "explicăm",
-            "explicaţi",
-            "explică"
-        ]
+        "name": "invita"
     },
     {
-        "name": "flutura",
-        "conjugations": [
-            "flutur",
-            "fluturi",
-            "flutură",
-            "fluturăm",
-            "fluturaţi",
-            "flutură"
-        ]
+        "name": "îmbrăca"
     },
     {
-        "name": "ierta",
-        "conjugations": [
-            "iert",
-            "ierţi",
-            "iartă",
-            "iertăm",
-            "iertaţi",
-            "iartă"
-        ]
+        "name": "încărca"
     },
     {
-        "name": "invita",
-        "conjugations": [
-            "invit",
-            "inviţi",
-            "invită",
-            "invităm",
-            "invitaţi",
-            "invită"
-        ]
+        "name": "îngheţa"
     },
     {
-        "name": "îmbrăca",
-        "conjugations": [
-            "îmbrac",
-            "îmbraci",
-            "îmbracă",
-            "îmbrăcăm",
-            "îmbrăcaţi",
-            "îmbracă"
-        ]
+        "name": "înota"
     },
     {
-        "name": "încărca",
-        "conjugations": [
-            "încarc",
-            "încarci",
-            "încarcă",
-            "încărcăm",
-            "încărcaţi",
-            "încarcă"
-        ]
+        "name": "juca"
     },
     {
-        "name": "îngheţa",
-        "conjugations": [
-            "îngheţ",
-            "îngheţi",
-            "îngheţă",
-            "îngheţăm",
-            "îngheţaţi",
-            "îngheţă"
-        ]
+        "name": "mânca"
     },
     {
-        "name": "înota",
-        "conjugations": [
-            "înot",
-            "înoţi",
-            "înoată",
-            "înotăm",
-            "înotaţi",
-            "înoată"
-        ]
-    },
-    {
-        "name": "juca",
-        "conjugations": [
-            "joc",
-            "joci",
-            "joacă",
-            "jucăm",
-            "jucaţi",
-            "joacă"
-        ]
-    },
-    {
-        "name": "mânca",
-        "conjugations": [
-            "mănânc",
-            "mănânci",
-            "mănâncă",
-            "mâncăm",
-            "mâncaţi",
-            "mănâncă"
-        ]
-    },
-    {
-        "name": "plimba",
-        "conjugations": [
-            "plimb",
-            "plimbi",
-            "plimbă",
-            "plimbăm",
-            "plimbaţi",
-            "plimbă"
-        ]
+        "name": "plimba"
     }
       ]
   },
   {
-      name:'Type 2: (-ez)',
+      name:'Type 1a (ez)',
       condition:'Ends with -a',
       endings:[
         '+ez',
@@ -498,8 +150,950 @@ var all_groups = [
         '+ăm',
         '+ați',
         '+ează'
+      ],
+      verbs: [
+        {
+            "name": "crea"
+        },
+        {
+            "name": "supraveghea"
+        },
+        {
+            "name": "priveghea"
+        },
+        {
+            "name": "veghea"
+        },
+        {
+          "name": "deranja"
+        },
+        {
+          "name": "aranja"
+        },
+        {
+          "name": "aborda"
+        },
+        {
+          "name": "corecta"
+        },
+        {
+          "name": "colecta"
+        },
+        {
+          "name": "completa"
+        },
+        {
+          "name": "conecta"
+        },
+        {
+          "name": "contacta"
+        },
+        {
+          "name": "controla"
+        },
+        {
+          "name": "copia"
+        },
+        {
+          "name": "devia"
+        },
+        {
+          "name": "dansa"
+        },
+        {
+          "name": "desena"
+        },
+        {
+          "name": "livra"
+        },
+        {
+          "name": "visa"
+        },
+        {
+          "name": "eșua"
+        },
+        {
+          "name": "ghida"
+        },
+        {
+          "name": "informa"
+        },
+        {
+          "name": "păstra"
+        },
+        {
+          "name": "ateriza"
+        },
+        {
+          "name": "proteja"
+        },
+
+      ]
+
+  },
+  {
+      name:'Type 2',
+      condition:'Ends with -ea',
+      endings:[
+        '-',
+        '+i',
+        '+e',
+        '+em',
+        '+eți',
+        '-'
+      ],
+      verbs: [
+          {
+          "name": "apărea"
+      },
+      {
+          "name": "avea"
+      },
+      {
+          "name": "bea"
+      },
+      {
+          "name": "cădea"
+      },
+
+      {
+          "name": "decădea"
+      },
+
+      {
+          "name": "dispărea"
+      },
+      {
+          "name": "împerechea"
+      },
+      {
+            "name": "întrevedea"
+      },
+      {
+          "name": "părea"
+      },
+      {
+          "name": "plăcea"
+      },
+      {
+          "name": "prevedea"
+      },
+      {
+          "name": "putea"
+      },
+      {
+          "name": "scădea"
+      },
+      {
+          "name": "străvedea"
+      },
+
+      {
+          "name": "ședea"
+      },
+      {
+          "name": "tăcea"
+      },
+      {
+          "name": "vedea"
+      },
+      {
+          "name": "zăcea"
+      }
+        ]
+  },
+  {
+      name:'Type 3',
+      condition:'Ends with -e',
+      endings:[
+        '-',
+        '+i',
+        '+e',
+        '+em',
+        '+eți',
+        '-'
+      ],
+      verbs: [
+
+    {
+        "name": "aduce"
+    },
+    {
+        "name": "ajunge"
+    },
+    {
+        "name": "alege"
+    },
+    {
+        "name": "aprinde"
+    },
+    {
+        "name": "apune"
+    },
+
+    {
+        "name": "ascunde"
+    },
+    {
+        "name": "atinge"
+    },
+    {
+        "name": "atrage"
+    },
+    {
+        "name": "bate"
+    },
+    {
+        "name": "cere"
+    },
+    {
+        "name": "cerne"
+    },
+
+    {
+        "name": "coase"
+    },
+    {
+        "name": "comite"
+    },
+    {
+        "name": "compune"
+    },
+    {
+        "name": "concepe"
+    },
+    {
+        "name": "conduce"
+    },
+    {
+        "name": "constrânge"
+    },
+    {
+        "name": "contrazice"
+    },
+
+    {
+        "name": "convinge"
+    },
+
+    {
+        "name": "crede"
+    },
+    {
+        "name": "crește"
+    },
+    {
+        "name": "cuprinde"
+    },
+    {
+        "name": "decide"
+    },
+    {
+        "name": "deprinde"
+    },
+    {
+        "name": "depune"
+    },
+    {
+        "name": "deschide"
+    },
+    {
+        "name": "descinge"
+    },
+    {
+        "name": "descompune"
+    },
+
+    {
+        "name": "descrie"
+    },
+    {
+        "name": "desface"
+    },
+    {
+        "name": "desprinde"
+    },
+
+    {
+        "name": "dispune"
+    },
+    {
+        "name": "distinge"
+    },
+    {
+        "name": "distruge"
+    },
+
+    {
+        "name": "duce"
+    },
+    {
+        "name": "evinge"
+    },
+    {
+        "name": "expune"
+    },
+    {
+        "name": "extinde"
+    },
+
+    {
+        "name": "face"
+    },
+    {
+        "name": "frige"
+    },
+    {
+        "name": "geme"
+    },
+    {
+        "name": "impune"
+    },
+    {
+        "name": "induce"
+    },
+    {
+        "name": "interzice"
+    },
+    {
+        "name": "introduce"
+    },
+    {
+        "name": "împunge"
+    },
+    {
+        "name": "începe"
+    },
+    {
+        "name": "închide"
+    },
+    {
+        "name": "încrede"
+    },
+
+    {
+        "name": "întoarce"
+    },
+
+    {
+        "name": "întrerupe"
+    },
+
+    {
+        "name": "linge"
+    },
+    {
+        "name": "merge"
+    },
+
+    {
+        "name": "naște"
+    },
+    {
+        "name": "petrece"
+    },
+    {
+        "name": "pierde"
+    },
+    {
+        "name": "plânge"
+    },
+    {
+        "name": "prescrie"
+    },
+    {
+        "name": "presupune"
+    },
+
+    {
+        "name": "prinde"
+    },
+    {
+        "name": "produce"
+    },
+    {
+        "name": "promite"
+    },
+    {
+        "name": "propune"
+    },
+    {
+        "name": "pune"
+    },
+
+    {
+        "name": "rade"
+    },
+    {
+        "name": "rămâne"
+    },
+    {
+        "name": "răpune"
+    },
+    {
+        "name": "răscoace"
+    },
+    {
+        "name": "răsfrânge"
+    },
+    {
+        "name": "răspunde"
+    },
+    {
+        "name": "răszice"
+    },
+    {
+        "name": "reduce"
+    },
+    {
+        "name": "reintroduce"
+    },
+    {
+        "name": "rescrie"
+    },
+    {
+        "name": "retrage"
+    },
+    {
+        "name": "rupe"
+    },
+    {
+        "name": "satisface"
+    },
+
+    {
+        "name": "scrie"
+    },
+
+    {
+        "name": "sparge"
+    },
+    {
+        "name": "spune"
+    },
+    {
+        "name": "stinge"
+    },
+
+    {
+        "name": "strânge"
+    },
+    {
+        "name": "subscrie"
+    },
+
+    {
+        "name": "surprinde"
+    },
+    {
+        "name": "șterge"
+    },
+    {
+        "name": "teme"
+    },
+    {
+        "name": "tinde"
+    },
+    {
+        "name": "toarce"
+    },
+    {
+        "name": "traduce"
+    },
+    {
+        "name": "trage"
+    },
+    {
+        "name": "transcrie"
+    },
+    {
+        "name": "trece"
+    },
+    {
+        "name": "trimite"
+    },
+    {
+        "name": "ucide"
+    },
+    {
+        "name": "umple"
+    },
+    {
+        "name": "vinde"
+    },
+    {
+        "name": "zbate"
+    },
+    {
+        "name": "zice"
+    }
       ]
   },
+  {
+    name:'Type 4',
+    condition:'Ends with -i',
+    endings:[
+      '-',
+      '+i',
+      '+e',
+      '+im',
+      '+iți',
+      '-'
+    ],
+    verbs: [
+      {
+          "name": "acoperi"
+      },
+      {
+          "name": "adormi"
+      },
+
+          {
+              "name": "auzi"
+          },
+      {
+          "name": "conveni"
+      },
+      {
+          "name": "dormi"
+      },
+      {
+          "name": "deveni"
+      },
+      {
+          "name": "descoperi"
+      },
+      {
+          "name": "fi"
+      },
+      {
+          "name": "fugi"
+      },
+      {
+          "name": "ieși"
+      },
+      {
+          "name": "interveni"
+      },
+
+
+
+          {
+              "name": "înăbuși"
+          },
+          {
+              "name": "muri"
+          },
+          {
+              "name": "oferi"
+          },
+          {
+              "name": "preveni"
+          },
+
+            {
+                "name": "reveni"
+            },
+            {
+                "name": "solvi"
+            },
+            {
+                "name": "sorbi"
+            },
+            {
+                "name": "suferi"
+            },
+            {
+                "name": "ști"
+            },
+            {
+                "name": "veni"
+            },
+    ]
+  },
+  {
+      name:'Type 4a (esc)',
+      condition:'Ends with -i',
+      endings:[
+        '+esc',
+        '+ești',
+        '+ește',
+        '+im',
+        '+iți',
+        '+esc'
+      ],
+      verbs: [
+        {
+        "name": "absolvi"
+    },
+
+    {
+        "name": "acri"
+    },
+    {
+        "name": "adânci"
+    },
+
+    {
+        "name": "adumbri"
+    },
+    {
+        "name": "albi"
+    },
+    {
+        "name": "amăgi"
+    },
+
+    {
+        "name": "aminti"
+    },
+
+
+    {
+        "name": "bărbieri"
+    },
+    {
+        "name": "boci"
+    },
+    {
+        "name": "buluci"
+    },
+
+    {
+        "name": "călători"
+    },
+    {
+        "name": "căsători"
+    },
+
+
+    {
+        "name": "cheltui"
+    },
+
+    {
+        "name": "citi"
+    },
+    {
+        "name": "ciuguli"
+    },
+    {
+        "name": "clădi"
+    },
+    {
+        "name": "clăti"
+    },
+    {
+        "name": "cloci"
+    },
+    {
+        "name": "clocoti"
+    },
+    {
+        "name": "cocoloși"
+    },
+    {
+        "name": "construi"
+    },
+    {
+        "name": "conteni"
+    },
+    {
+        "name": "contopi"
+    },
+
+
+    {
+        "name": "copleși"
+    },
+    {
+        "name": "coti"
+    },
+    {
+        "name": "cotropi"
+    },
+    {
+        "name": "cuceri"
+    },
+    {
+        "name": "cumpăni"
+    },
+
+
+
+    {
+        "name": "dezamăgi"
+    },
+    {
+        "name": "dezlipi"
+    },
+
+    {
+        "name": "dezrobi"
+    },
+
+    {
+        "name": "domestici"
+    },
+    {
+        "name": "domni"
+    },
+    {
+        "name": "dori"
+    },
+
+    {
+        "name": "dospi"
+    },
+    {
+        "name": "dovedi"
+    },
+    {
+        "name": "dușmăni"
+    },
+
+    {
+        "name": "făli"
+    },
+    {
+        "name": "ferici"
+    },
+
+    {
+        "name": "folosi"
+    },
+
+
+    {
+        "name": "găsi"
+    },
+    {
+        "name": "găti"
+    },
+
+    {
+        "name": "gândi"
+    },
+    {
+        "name": "ghici"
+    },
+    {
+        "name": "glumi"
+    },
+    {
+        "name": "goli"
+    },
+    {
+        "name": "grăbi"
+    },
+
+    {
+        "name": "ieftini"
+    },
+
+
+    {
+        "name": "intui"
+    },
+
+
+    {
+        "name": "iubi"
+    },
+
+    {
+        "name": "îmbătrâni"
+    },
+
+
+    {
+        "name": "împleti"
+    },
+    {
+        "name": "împlini"
+    },
+
+
+    {
+        "name": "încălzi"
+    },
+
+    {
+        "name": "încercui"
+    },
+    {
+        "name": "îndrăgosti"
+    },
+    {
+        "name": "îndrăzni"
+    },
+    {
+        "name": "îndulci"
+    },
+
+    {
+        "name": "înflori"
+    },
+
+    {
+        "name": "îngriji"
+    },
+    {
+        "name": "înlocui"
+    },
+
+    {
+        "name": "limpezi"
+    },
+    {
+        "name": "linguși"
+    },
+    {
+        "name": "liniști"
+    },
+
+    {
+        "name": "locui"
+    },
+
+    {
+        "name": "lovi"
+    },
+    {
+        "name": "luci"
+    },
+    {
+        "name": "lungi"
+    },
+
+    {
+        "name": "mări"
+    },
+
+    {
+        "name": "mândri"
+    },
+
+    {
+        "name": "mijloci"
+    },
+    {
+        "name": "munci"
+    },
+    {
+        "name": "murdări"
+    },
+
+    {
+        "name": "nebuni"
+    },
+
+    {
+        "name": "nimici"
+    },
+
+    {
+        "name": "obosi"
+    },
+    {
+        "name": "ochi"
+    },
+
+
+
+    {
+        "name": "opri"
+    },
+
+
+    {
+        "name": "păzi"
+    },
+    {
+        "name": "pedepsi"
+    },
+    {
+        "name": "petici"
+    },
+
+    {
+        "name": "plăti"
+    },
+
+    {
+        "name": "plivi"
+    },
+    {
+        "name": "pluti"
+    },
+
+    {
+        "name": "porni"
+    },
+
+    {
+        "name": "potrivi"
+    },
+    {
+        "name": "primi"
+    },
+
+
+
+    {
+        "name": "răsări"
+    },
+
+
+    {
+        "name": "răzgândi"
+    },
+
+    {
+        "name": "reînnoi"
+    },
+
+
+    {
+        "name": "scumpi"
+    },
+    {
+        "name": "servi"
+    },
+
+    {
+        "name": "sfârși"
+    },
+
+
+    {
+        "name": "slăbi"
+    },
+
+
+
+    {
+        "name": "sori"
+    },
+
+    {
+        "name": "stabili"
+    },
+
+
+
+    {
+        "name": "trezi"
+    },
+    {
+        "name": "turti"
+    },
+
+    {
+        "name": "vorbi"
+    }
+      ]
+  }
 ];
 
 export default {
