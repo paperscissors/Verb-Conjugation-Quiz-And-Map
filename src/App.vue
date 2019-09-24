@@ -1093,7 +1093,33 @@ var all_groups = [
         "name": "vorbi"
     }
       ]
-  }
+  },
+  {
+      name:'Type 5',
+      condition:'Ends with -î',
+      endings:[
+        '-',
+        '+i',
+        '+e',
+        '+em',
+        '+eți',
+        '-'
+      ],
+      verbs: []
+    },
+    {
+        name:'Type 5a (ăsc)',
+        condition:'Ends with -î',
+        endings:[
+          '+ăsc',
+          '+ăști',
+          '+ăște',
+          '+âm',
+          '+âți',
+          '+ăsc'
+        ],
+        verbs: []
+      }
 ];
 
 export default {

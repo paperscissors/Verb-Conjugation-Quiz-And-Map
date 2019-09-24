@@ -78,7 +78,7 @@ function randomNoRepeats(array) {
 
 function getAPIConjugations(verb) {
 
-        return axios.get("http://localhost:5000/api/conjugate/"+verb)
+        return axios.get("http://congujation-api.paperscissorsandglue.com/api/conjugate/"+verb)
             .then(response => {
               let conjugations = response.data.Prezent;
 
